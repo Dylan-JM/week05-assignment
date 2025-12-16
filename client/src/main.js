@@ -59,7 +59,7 @@ async function fetchEvents() {
     hostName.textContent = `Host Name: ${data[i].host_name}`;
 
     const eventDescription = document.createElement("p");
-    eventDescription.classList.add("event-name");
+    eventDescription.classList.add("event-description");
     eventDescription.textContent = `Description: ${data[i].event_description}`;
 
     const eventLocation = document.createElement("p");
