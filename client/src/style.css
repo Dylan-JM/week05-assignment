@@ -230,3 +230,28 @@ footer {
     scale: 1.05;
   }
 }
+
+@media (max-width: 600px) {
+  #form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 515px) {
+  #form-container {
+    width: 100%;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #inserted-event {
+    padding: 5px;
+    margin: 0px;
+  }
+}
