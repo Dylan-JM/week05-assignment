@@ -1,20 +1,37 @@
-
-const eventsForm = document.getElementById("events-container");
+const eventsForm = document.getElementById("create-event-form");
 eventsForm.addEventListener("submit", handleEvents);
-function handleEvents(event)  {
-    event.preventDefault();
-    const formDataTemplate = new FormData(eventsForm);
-    const formValues = Object.fromEntries(formDataTemplate);
-    fetch("http://localhost:8080/events", {
-        method: "POST",
-        headers:    {
-            "Content-type": "application/json",
-        },
-        body: JSON.stringify({ formValues }),
-    });
+
+async function handleEvents(event) {
+  event.preventDefault();
+
+  const formData = new FormData(eventsForm);
+  const hostName = formData.get("event-form-host-name");
+  const eventName = formData.get("event-form-name");
+  const eventDescription = formData.get("event-form-description");
+  const category = formData.get("event-form-category");
+  const date = formData.get("event-form-date");
+  const time = formData.get("event-form-time");
+  const location = formData.get("event-form-location");
+
+  await fetch("http://localhost:8080/events", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      hostName,
+      eventName,
+      category,
+      date,
+      time,
+      eventDescription,
+      location,
+    }),
+  });
+
+  eventsForm.reset();
+  await fetchEvents();
 }
-
-
 
 async function fetchEvents() {
   const response = await fetch("http://localhost:8080/events", {
@@ -25,9 +42,11 @@ async function fetchEvents() {
   });
   const data = await response.json();
   console.log(data);
-   
-const eventsContainer = document.getElementById("events-container");
-  for (let i=0; i<data.length; i++)   {
+
+  const eventsContainer = document.getElementById("events-container");
+  eventsContainer.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
     const insertedEvent = document.createElement("div");
     insertedEvent.classList.add("inserted-event");
 
@@ -58,9 +77,17 @@ const eventsContainer = document.getElementById("events-container");
     const eventCategory = document.createElement("p");
     eventCategory.classList.add("event-category");
     eventCategory.textContent = `Category: ${data[i].category}`;
-    
-    insertedEvent.append(eventName, hostName, eventDescription, eventLocation, eventDate, eventTime, eventCategory);
+
+    insertedEvent.append(
+      eventName,
+      hostName,
+      eventDescription,
+      eventLocation,
+      eventDate,
+      eventTime,
+      eventCategory
+    );
     eventsContainer.appendChild(insertedEvent);
-    }
+  }
 }
 fetchEvents();
