@@ -104,43 +104,48 @@ option {
   width: 50%;
 }
 
-#inserted-event {
+.inserted-event {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   border-radius: 20px;
   background-color: lightgray;
   margin: 20px;
 }
 
-#event-name {
+.event-name {
   grid-row-start: 1;
   grid-column-start: 2;
 }
 
-#host-name {
+.host-name {
   grid-row-start: 2;
   grid-column-start: 1;
 }
 
-#event-description {
+.event-description {
   grid-row-start: 3;
   grid-column-start: 1;
 }
 
-#event-location {
+.event-location {
   grid-row-start: 4;
   grid-column-start: 1;
 }
 
-#event-date {
+.event-date {
   grid-row-start: 5;
   grid-column-start: 1;
 }
 
-#event-category {
+.event-time {
   grid-row-start: 6;
+  grid-column-start: 1;
+}
+
+.event-category {
+  grid-row-start: 7;
   grid-column-start: 1;
 }
 
