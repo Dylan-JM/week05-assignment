@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 // read data from database
-app.get("/eventdisplay", async function (req, res) {
+app.get("/events", async function (req, res) {
   const hostedEventsGet = await db.query(
     `SELECT * FROM events ORDER BY id DESC LIMIT 16;`
   );
@@ -30,7 +30,7 @@ app.get("/eventdisplay", async function (req, res) {
 });
 
 // create data in database
-app.post("/eventdisplay", async function (req, res) {
+app.post("/events", async function (req, res) {
   const {
     host_name,
     event_name,
