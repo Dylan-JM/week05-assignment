@@ -33,18 +33,8 @@ async function handleEvents(event) {
   await fetchEvents();
 }
 
-async function fetchEvents() {
-  const response = await fetch("http://localhost:8080/events", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const data = await response.json();
-  console.log(data);
-
-  const eventsContainer = document.getElementById("events-container");
-  eventsContainer.innerHTML = "";
+function renderEvents(data, container) {
+  container.innerHTML = "";
 
   for (let i = 0; i < data.length; i++) {
     const insertedEvent = document.createElement("div");
@@ -87,7 +77,33 @@ async function fetchEvents() {
       eventTime,
       eventCategory
     );
-    eventsContainer.appendChild(insertedEvent);
+    container.appendChild(insertedEvent);
   }
 }
+
+async function fetchEvents() {
+  const response = await fetch("http://localhost:8080/events", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+
+  const eventsContainer = document.getElementById("events-container");
+  renderEvents(data, eventsContainer);
+}
 fetchEvents();
+
+const categorySelect = document.getElementById("filter-select");
+const resultsList = document.getElementById("events-container");
+
+categorySelect.addEventListener("change", async (event) => {
+  const category = event.target.value;
+  const response = await fetch(
+    `http://localhost:8080/events?category=${category}`
+  );
+  const data = await response.json();
+  renderEvents(data, resultsList);
+});
