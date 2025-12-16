@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 header {
   padding: 15px;
   background-color: rgba(211, 211, 211, 0.555);
@@ -61,6 +67,7 @@ option {
 }
 
 #main-events-container {
+  width: 95%;
   grid-row-start: 1;
   grid-column-start: 2;
   padding: 15px;
@@ -105,48 +112,109 @@ option {
 }
 
 .inserted-event {
+  width: 90%;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr 0.1fr 0.1fr 0.1fr;
   border-radius: 20px;
   background-color: lightgray;
   margin: 20px;
 }
 
 .event-name {
+  padding: 10px;
+  width: 90%;
+  margin: 10px;
   grid-row-start: 1;
   grid-column-start: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 .host-name {
-  grid-row-start: 2;
+  width: 90%;
+  margin: 10px;
+  grid-row-start: 3;
   grid-column-start: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 .event-description {
-  grid-row-start: 3;
+  max-width: 90%;
+  margin: 10px;
+  padding: 15px;
+  grid-row-start: 2;
+  grid-row-end: 2;
   grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
+  max-height: 700px;
+  flex-wrap: wrap;
 }
 
 .event-location {
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
   grid-row-start: 4;
-  grid-column-start: 1;
+  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 .event-date {
-  grid-row-start: 5;
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+  grid-row-start: 4;
   grid-column-start: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 .event-time {
-  grid-row-start: 6;
-  grid-column-start: 1;
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+  grid-row-start: 4;
+  grid-column-start: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 .event-category {
-  grid-row-start: 7;
-  grid-column-start: 1;
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+  grid-row-start: 3;
+  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.493);
 }
 
 #create-event-form {
@@ -236,27 +304,77 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
+  .inserted-event {
+    width: 100%;
+    margin: 10px 0;
+  }
+  main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #filter-container {
+    background-color: transparent;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    height: 100%;
+  }
+  #filter-select {
+    text-decoration: none;
+    border: none;
+  }
+  #main-events-container {
+    margin: 10px 0;
+    width: 95%;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+  }
+  #main-form-container {
+    width: 95%;
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
   #form-container {
     width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+  }
+  .event-description {
+    max-width: 90%;
+    margin: 10px 0;
+    padding: 5;
+    max-height: 100px;
+    overflow-y: auto;
+
+    display: block;
+  }
+  header {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    margin: 20px;
   }
 }
 
-@media (max-width: 515px) {
-  #form-container {
-    width: 100%;
-  }
-  main {
+@media (max-width: 500px) {
+  .inserted-event {
     display: flex;
     flex-direction: column;
-  }
-  nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  #inserted-event {
-    padding: 5px;
-    margin: 0px;
   }
 }
