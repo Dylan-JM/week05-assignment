@@ -14,19 +14,29 @@ app.listen(PORT, () => {
 app.use(cors());
 app.use(express.json());
 
-//TODO: READ a welcome message
+//read a welcome message
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the server. GET comfy!" });
   //   res.send("<h1>Welcome to the server. GET comfy!</h1>");
 });
 
 // read data from database
+// if a category is selected, filter by that category
 app.get("/events", async function (req, res) {
-  const hostedEventsGet = await db.query(
-    `SELECT * FROM events ORDER BY id DESC LIMIT 16;`
-  );
-  console.log(hostedEventsGet);
-  res.json(hostedEventsGet.rows);
+  const category = req.query.category;
+
+  if (category) {
+    const result = await db.query(
+      `SELECT * FROM events WHERE category = $1 ORDER BY id DESC LIMIT 16;`,
+      [category]
+    );
+    res.json(result.rows);
+  } else {
+    const hostedEventsGet = await db.query(
+      `SELECT * FROM events ORDER BY id DESC LIMIT 16;`
+    );
+    res.json(hostedEventsGet.rows);
+  }
 });
 
 // create data in database
