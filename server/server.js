@@ -20,11 +20,8 @@ app.get("/", (req, res) => {
   //   res.send("<h1>Welcome to the server. GET comfy!</h1>");
 });
 
-//============================================================================
-// Arron's code
-// Getting some data from the DB relating to fetching event table rows
-// ORDER BY id DESC LIMIT 16 defines how many results we want to get from the database, we can change this number if the page isn't populated with enough events.
-app.get("/eventdisplay", async function (req, res) {
+// read data from database
+app.get("/events", async function (req, res) {
   const hostedEventsGet = await db.query(
     `SELECT * FROM events ORDER BY id DESC LIMIT 16;`
   );
@@ -32,4 +29,28 @@ app.get("/eventdisplay", async function (req, res) {
   res.json(hostedEventsGet.rows);
 });
 
-//============================================================================
+// create data in database
+app.post("/events", async function (req, res) {
+  const {
+    host_name,
+    event_name,
+    event_description,
+    event_category,
+    event_date,
+    event_time,
+  } = req.body;
+
+  const query = db.query(
+    `INSERT INTO events (host_name, event_name, event_description, event_category, event_date, event_time) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+    [
+      host_name,
+      event_name,
+      event_description,
+      event_category,
+      event_date,
+      event_time,
+    ]
+  );
+
+  res.json({ message: "Event created successfully" });
+});
