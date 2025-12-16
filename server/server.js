@@ -17,7 +17,6 @@ app.use(express.json());
 //read a welcome message
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the server. GET comfy!" });
-  //   res.send("<h1>Welcome to the server. GET comfy!</h1>");
 });
 
 // read data from database
@@ -42,24 +41,18 @@ app.get("/events", async function (req, res) {
 // create data in database
 app.post("/events", async function (req, res) {
   const {
-    host_name,
-    event_name,
-    event_description,
-    event_category,
-    event_date,
-    event_time,
+    hostName,
+    eventName,
+    category,
+    date,
+    time,
+    eventDescription,
+    location,
   } = req.body;
 
   const query = db.query(
-    `INSERT INTO events (host_name, event_name, event_description, event_category, event_date, event_time) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-    [
-      host_name,
-      event_name,
-      event_description,
-      event_category,
-      event_date,
-      event_time,
-    ]
+    `INSERT INTO events (host_name, event_name, category, date, time, event_description, location) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+    [hostName, eventName, category, date, time, eventDescription, location]
   );
 
   res.json({ message: "Event created successfully" });
