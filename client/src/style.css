@@ -23,6 +23,11 @@ header {
   align-items: center;
 }
 
+#homepage-id {
+  text-decoration: none;
+  border: none;
+}
+
 a {
   padding: 10px;
   text-decoration: none;
@@ -42,11 +47,12 @@ a:hover {
 main {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 0.5fr;
+  grid-template-rows: 0.1fr 1fr;
+  flex: 1;
 }
 
 #filter-container {
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-column-start: 1;
   padding: 15px;
   margin: 20px;
@@ -73,7 +79,7 @@ option {
 
 #main-events-container {
   width: 95%;
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-column-start: 2;
   padding: 15px;
   display: flex;
@@ -224,6 +230,18 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+#about-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 20px;
+  color: white;
+  text-align: center;
 }
 
 ::-webkit-scrollbar-track {

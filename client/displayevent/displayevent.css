@@ -44,6 +44,12 @@ main {
   justify-content: center;
   align-items: center;
   color: white;
+  flex: 1;
+}
+
+#homepage-id {
+  text-decoration: none;
+  border: none;
 }
 
 footer {
