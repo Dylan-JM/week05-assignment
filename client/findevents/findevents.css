@@ -326,7 +326,6 @@ footer {
     display: block;
   }
   header {
-    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
