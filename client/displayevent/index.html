@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./displayevent.css" />
+    <script src="./displayevent.js" defer></script>
+    <title>Display Event Page</title>
+  </head>
+  <body>
+    <!-----------------------------------------Header Area--------------------------------------------------------->
+
+    <header>
+      <a id="homepage-id" href="/" class="clickable-header">
+        <h1>Display Event Page</h1>
+      </a>
+      <nav>
+        <a href="/findevents/">Find Events</a>
+        <a href="/createevents/">Create Event</a>
+      </nav>
+    </header>
+    <main>
+      <div id="event-details-container">
+        <h1>Add event details here from js</h1>
+      </div>
+    </main>
+
+    <form id="commentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="comment">Comment:</label>
+      <input id="comment" name="comment" required />
+      <button type="submit">Send</button>
+    </form>
+    <section id="comment-section">
+      <list id="comment-list"> </list>
+    </section>
+
+    <!-----------------------------------------Footer Area--------------------------------------------------------->
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
