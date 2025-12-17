@@ -28,7 +28,7 @@ function renderEvent(data, container) {
 
   const eventDate = document.createElement("p");
   eventDate.classList.add("event-date");
-  const formattedDate = new Date(data[i].date).toLocaleDateString("en-GB");
+  const formattedDate = new Date(data.date).toLocaleDateString("en-GB");
   eventDate.textContent = `Date: ${formattedDate}`;
 
   const eventTime = document.createElement("p");
