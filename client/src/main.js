@@ -3,7 +3,7 @@ function renderEvents(data, container) {
 
   for (let i = 0; i < data.length; i++) {
     const link = document.createElement("a");
-    link.href = "/displayevent/";
+    link.href = `/displayevent/?id=${data[i].id}`;
     link.classList.add("event-link");
 
     const insertedEvent = document.createElement("div");

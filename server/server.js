@@ -59,7 +59,6 @@ app.post("/events", async function (req, res) {
 });
 
 // read data from database
-// if a category is selected, filter by that category
 app.get("/events/comments", async function (req, res) {
   const eventId = req.query.event_id;
 
@@ -68,4 +67,26 @@ app.get("/events/comments", async function (req, res) {
     [eventId]
   );
   res.json({ comments: result.rows });
+});
+
+// post route for comments in database
+app.post("/events/comments", async function (req, res) {
+  const { selectedEventId, name, comment } = req.body;
+
+  const query = db.query(
+    `INSERT INTO comments (event_id, name, comment) VALUES ($1, $2, $3) RETURNING *`,
+    [selectedEventId, name, comment]
+  );
+
+  res.json({ message: "Comment added successfully" });
+});
+
+// get single event by id
+app.get("/events/:id", async function (req, res) {
+  const eventId = req.params.id;
+
+  const result = await db.query(`SELECT * FROM events WHERE id = $1;`, [
+    eventId,
+  ]);
+  res.json(result.rows[0]);
 });
