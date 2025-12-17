@@ -46,7 +46,10 @@ app.get("/events", async function (req, res) {
     );
     res.json(result.rows);
   }
-  if (category == null && location == null) {
+  if (
+    (category == null || category == "") &&
+    (location == null || location == "")
+  ) {
     const hostedEventsGet = await db.query(
       `SELECT * FROM events ORDER BY id DESC LIMIT 16;`
     );
