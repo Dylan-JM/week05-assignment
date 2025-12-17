@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./createevents.css" />
+    <script src="./createevents.js" defer></script>
+    <title>Create Events</title>
+  </head>
+  <body>
+    <!-----------------------------------------Header Area--------------------------------------------------------->
+
+    <header>
+      <a id="homepage-id" href="/" class="clickable-header">
+        <h1>Create Events</h1>
+      </a>
+      <nav>
+        <a href="/findevents/">Find Events</a>
+        <a href="/createevents/">Create Event</a>
+      </nav>
+    </header>
+    <main>
+      <div id="main-form-container">
+        <div id="form-container">
+          <h2>Create An Event</h2>
+          <div id="input-container">
+            <form id="create-event-form">
+              <label id="event-form-name" for="event-form-name"></label>
+              <input
+                id="event-form-name"
+                type="text"
+                name="event-form-name"
+                placeholder="Event Name"
+              />
+
+              <label
+                id="event-form-host-name"
+                for="event-form-host-name"
+              ></label>
+              <textarea
+                id="event-form-host-name"
+                placeholder="Host name"
+                name="event-form-host-name"
+              ></textarea>
+
+              <label
+                id="event-form-description"
+                for="event-form-description"
+              ></label>
+              <textarea
+                id="event-form-description"
+                placeholder="Event Description"
+                name="event-form-description"
+              ></textarea>
+
+              <label id="event-form-location" for="event-form-location"></label>
+              <textarea
+                id="event-form-location"
+                placeholder="Event Location"
+                name="event-form-location"
+              ></textarea>
+
+              <label id="event-form-date" for="event-form-date"></label>
+              <textarea
+                id="event-form-date"
+                placeholder="Event Date"
+                name="event-form-date"
+              ></textarea>
+
+              <label id="event-form-time" for="event-form-time"></label>
+              <textarea
+                id="event-form-time"
+                placeholder="Event time"
+                name="event-form-time"
+              ></textarea>
+
+              <label for="event-form-category">Event Category</label>
+              <select id="event-form-category" name="event-form-category">
+                <option value="">Select a category</option>
+                <option value="Convention">Convention</option>
+                <option value="Arts and crafts">Arts and crafts</option>
+                <option value="Theatre/Entertainment">
+                  Theatre/Entertainment
+                </option>
+                <option value="Fete/Funfair">Fete/Funfair</option>
+                <option value="Sports">Sports</option>
+                <option value="Social Group">Social Group</option>
+              </select>
+
+              <button id="submit-btn" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-----------------------------------------Footer Area--------------------------------------------------------->
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
