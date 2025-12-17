@@ -63,20 +63,5 @@ async function fetchEvents() {
   });
   const data = await response.json();
   console.log(data);
-
-  const eventsContainer = document.getElementById("events-container");
-  renderEvents(data, eventsContainer);
 }
 fetchEvents();
-
-const categorySelect = document.getElementById("filter-select");
-const resultsList = document.getElementById("events-container");
-
-categorySelect.addEventListener("change", async (event) => {
-  const category = event.target.value;
-  const response = await fetch(
-    `http://localhost:8080/events?category=${category}`
-  );
-  const data = await response.json();
-  renderEvents(data, resultsList);
-});
