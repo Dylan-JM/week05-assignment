@@ -15,6 +15,11 @@ body {
   background-size: cover;
 }
 
+#homepage-id {
+  text-decoration: none;
+  border: none;
+}
+
 header {
   padding: 15px;
   background-color: rgba(211, 211, 211, 0.555);
@@ -41,8 +46,9 @@ a:hover {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 0.5fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  flex: 1;
 }
 
 #filter-container {
