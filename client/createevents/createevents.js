@@ -10,7 +10,9 @@ async function handleEvents(event) {
   const eventDescription = formData.get("event-form-description");
   const category = formData.get("event-form-category");
   const date = formData.get("event-form-date");
-  const time = formData.get("event-form-time");
+  const time = `${formData.get("event-form-time-start")} to ${formData.get(
+    "event-form-time-end"
+  )}`;
   const location = formData.get("event-form-location");
 
   await fetch("http://localhost:8080/events", {
