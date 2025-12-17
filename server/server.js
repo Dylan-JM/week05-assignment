@@ -25,14 +25,21 @@ app.get("/events", async function (req, res) {
   const category = req.query.category;
   const location = req.query.location;
 
-  if (location) {
+  if (location && category) {
+    const result = await db.query(
+      `SELECT * FROM events WHERE location = $1 AND category = $2 ORDER BY id DESC LIMIT 16`,
+      [location, category]
+    );
+    res.json(result.rows);
+  }
+  if (location && category == "") {
     const result = await db.query(
       `SELECT * FROM events WHERE location = $1 ORDER BY id DESC LIMIT 16`,
       [location]
     );
     res.json(result.rows);
   }
-  if (category) {
+  if (category && location == "") {
     const result = await db.query(
       `SELECT * FROM events WHERE category = $1 ORDER BY id DESC LIMIT 16;`,
       [category]
