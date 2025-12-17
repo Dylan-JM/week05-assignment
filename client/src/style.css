@@ -8,6 +8,11 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  background-color: black;
+  background-image: url("../public/images/Background3.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
 header {
