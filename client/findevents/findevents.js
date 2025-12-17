@@ -1,3 +1,5 @@
+const locationSelect = document.getElementById("filter-select-location");
+
 function renderEvents(data, container) {
   container.innerHTML = "";
 
@@ -24,6 +26,12 @@ function renderEvents(data, container) {
     const eventLocation = document.createElement("p");
     eventLocation.classList.add("event-location");
     eventLocation.textContent = `Location: ${data[i].location}`;
+
+    // add location to filter list
+    const newOption = document.createElement("option");
+    newOption.value = data[i].location;
+    newOption.textContent = data[i].location;
+    locationSelect.appendChild(newOption);
 
     const eventDate = document.createElement("p");
     eventDate.classList.add("event-date");
@@ -74,6 +82,15 @@ categorySelect.addEventListener("change", async (event) => {
   const category = event.target.value;
   const response = await fetch(
     `http://localhost:8080/events?category=${category}`
+  );
+  const data = await response.json();
+  renderEvents(data, resultsList);
+});
+
+locationSelect.addEventListener("change", async (event) => {
+  const category = event.target.value;
+  const response = await fetch(
+    `http://localhost:8080/events?location=${location}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
