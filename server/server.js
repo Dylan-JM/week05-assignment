@@ -57,3 +57,15 @@ app.post("/events", async function (req, res) {
 
   res.json({ message: "Event created successfully" });
 });
+
+// read data from database
+// if a category is selected, filter by that category
+app.get("/events/comments", async function (req, res) {
+  const eventId = req.query.event_id;
+
+  const result = await db.query(
+    `SELECT * FROM comments WHERE event_id = $1 ORDER BY id DESC;`,
+    [eventId]
+  );
+  res.json({ comments: result.rows });
+});
