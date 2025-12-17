@@ -61,18 +61,32 @@
               ></textarea>
 
               <label id="event-form-date" for="event-form-date"></label>
-              <textarea
+              <input
+              type = "date"
                 id="event-form-date"
                 placeholder="Event Date"
                 name="event-form-date"
-              ></textarea>
+              ></input>
 
               <label id="event-form-time" for="event-form-time"></label>
-              <textarea
-                id="event-form-time"
+              <input
+              type="time"
+              min="00:00"
+              max="23:59"
+                id="event-form-time-start"
                 placeholder="Event time"
-                name="event-form-time"
-              ></textarea>
+                name="event-form-time-start"
+              >to</input>
+
+              <label id="event-form-time" for="event-form-time"></label>
+              <input
+              type="time"
+              min="00:00"
+              max="23:59"
+                id="event-form-time-end"
+                placeholder="Event time"
+                name="event-form-time-end"
+              ></input>
 
               <label for="event-form-category">Event Category</label>
               <select id="event-form-category" name="event-form-category">
