@@ -24,7 +24,7 @@ function renderEvent(data, container) {
 
   const eventLocation = document.createElement("p");
   eventLocation.classList.add("event-location");
-  const str = data[i].location;
+  const str = data.location;
   const locationStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
   eventLocation.textContent = `Location: ${locationStr}`;
 
