@@ -106,7 +106,7 @@ option {
   width: 90%;
 }
 
-.inserted-event {
+/* .inserted-event {
   width: 90%;
   padding: 20px;
   display: grid;
@@ -114,6 +114,19 @@ option {
   grid-template-rows: 0.3fr 1fr 0.1fr 0.1fr 0.1fr;
   border-radius: 20px;
   background-color: lightgray;
+  margin: 20px;
+} */
+
+.inserted-event {
+  width: 90%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr 0.1fr 0.1fr 0.1fr;
+  background-image: url("../public/images/Noticeboard3b.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
   margin: 20px;
 }
 
@@ -237,7 +250,7 @@ footer {
   padding: 20px;
 }
 
-#about-us-container {
+/* #about-us-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -247,6 +260,22 @@ footer {
   padding: 20px;
   color: white;
   text-align: center;
+} */
+
+#about-us-container {
+  font-size: 24px;
+  margin-left: 24em;
+  margin-right: 24em;
+  margin-top: 6em;
+  margin-bottom: 12em;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 20px;
+  color: white;
+  p {
+    padding: 2em;
+  }
 }
 
 ::-webkit-scrollbar-track {
