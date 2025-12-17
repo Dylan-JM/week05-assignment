@@ -1,3 +1,5 @@
+const addedLocations = [];
+
 function renderEvents(data, container) {
   container.innerHTML = "";
 
@@ -23,7 +25,20 @@ function renderEvents(data, container) {
 
     const eventLocation = document.createElement("p");
     eventLocation.classList.add("event-location");
-    eventLocation.textContent = `Location: ${data[i].location}`;
+    const str = data[i].location;
+    const locationStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
+    eventLocation.textContent = `Location: ${locationStr}`;
+
+    // add location to filter list and account for duplicates
+    if (!addedLocations.includes(data[i].location.toLowerCase())) {
+      const newOption = document.createElement("option");
+      newOption.value = data[i].location;
+      const str = data[i].location;
+      const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase(); //make sure first letter is capatalised and rest lowercase.
+      newOption.textContent = modStr;
+      locationSelect.appendChild(newOption);
+      addedLocations.push(data[i].location.toLowerCase());
+    }
 
     const eventDate = document.createElement("p");
     eventDate.classList.add("event-date");
@@ -68,12 +83,25 @@ async function fetchEvents() {
 fetchEvents();
 
 const categorySelect = document.getElementById("filter-select");
+const locationSelect = document.getElementById("filter-select-location");
+
 const resultsList = document.getElementById("events-container");
 
 categorySelect.addEventListener("change", async (event) => {
   const category = event.target.value;
+  const location = locationSelect.value;
   const response = await fetch(
-    `http://localhost:8080/events?category=${category}`
+    `http://localhost:8080/events?category=${category}&location=${location}`
+  );
+  const data = await response.json();
+  renderEvents(data, resultsList);
+});
+
+locationSelect.addEventListener("change", async (event) => {
+  const location = event.target.value;
+  const category = categorySelect.value;
+  const response = await fetch(
+    `http://localhost:8080/events?location=${location}&category=${category}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
