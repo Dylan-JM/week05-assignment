@@ -11,7 +11,9 @@ https://event-planner-server-9pnz.onrender.com
 4. Create .env file in the server with environment variable DATABASE_URL=[yourURL]
 5. In server folder, run npm i
 6. In client folder, run npm install; npm run build
-7. In client and server, use npm run dev.
+7. Replace render links with localhost:8080 or your server.
+8. In client and server, use npm run dev.
+9. Go to your render client or http://localhost:5173 to view the website
 
 ## How to use website
 1. To view an event click one of the images relating to a category you may like or for more detailed search click on Find Events in the top right.
