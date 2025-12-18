@@ -55,7 +55,7 @@ function renderEvent(data, container) {
 
 async function fetchEvents() {
   const response = await fetch(
-    `http://localhost:8080/events/${selectedEventId}`,
+    `https://event-planner-server-9pnz.onrender.com/events/${selectedEventId}`,
     {
       method: "GET",
       headers: {
@@ -78,13 +78,16 @@ async function handleSubmitCommentForm(event) {
   const name = formData.get("name");
   const comment = formData.get("comment");
 
-  await fetch("http://localhost:8080/events/comments", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ selectedEventId, name, comment }),
-  });
+  await fetch(
+    "https://event-planner-server-9pnz.onrender.com/events/comments",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ selectedEventId, name, comment }),
+    }
+  );
 
   document.getElementById("commentForm").reset();
   await fetchComments(selectedEventId);
@@ -95,7 +98,7 @@ commentForm.addEventListener("submit", handleSubmitCommentForm);
 async function fetchComments(eventId) {
   console.log("Fetching comments for event ID:", selectedEventId);
   const response = await fetch(
-    `http://localhost:8080/events/comments?event_id=${eventId}`,
+    `https://event-planner-server-9pnz.onrender.com/events/comments?event_id=${eventId}`,
     {
       method: "GET",
       headers: {

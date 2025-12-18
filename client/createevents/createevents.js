@@ -15,7 +15,7 @@ async function handleEvents(event) {
   )}`;
   const location = formData.get("event-form-location");
 
-  await fetch("http://localhost:8080/events", {
+  await fetch("https://event-planner-server-9pnz.onrender.com/events", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
