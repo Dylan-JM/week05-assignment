@@ -109,24 +109,26 @@ async function fetchComments(eventId) {
   const list = document.getElementById("comment-list");
   list.innerHTML = "";
 
-  data.comments.forEach((event) => {
-    const listItem = document.createElement("li");
+  if (data.comments && Array.isArray(data.comments)) {
+    data.comments.forEach((event) => {
+      const listItem = document.createElement("li");
 
-    const commentName = document.createElement("span");
-    commentName.id = "comment-name";
-    commentName.textContent = `Name : ${event.name}`;
+      const commentName = document.createElement("span");
+      commentName.id = "comment-name";
+      commentName.textContent = `Name : ${event.name}`;
 
-    const commentText = document.createElement("span");
-    commentText.id = "comment-text";
-    commentText.textContent = `Comment : ${event.comment}`;
+      const commentText = document.createElement("span");
+      commentText.id = "comment-text";
+      commentText.textContent = `Comment : ${event.comment}`;
 
-    const commentContainer = document.createElement("div");
-    commentContainer.classList.add("comment-container");
-    commentContainer.appendChild(commentName);
-    commentContainer.appendChild(commentText);
-    listItem.appendChild(commentContainer);
-    list.appendChild(listItem);
-  });
+      const commentContainer = document.createElement("div");
+      commentContainer.classList.add("comment-container");
+      commentContainer.appendChild(commentName);
+      commentContainer.appendChild(commentText);
+      listItem.appendChild(commentContainer);
+      list.appendChild(listItem);
+    });
+  }
 }
 
 fetchComments(selectedEventId);
