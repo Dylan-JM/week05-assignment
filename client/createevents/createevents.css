@@ -27,6 +27,11 @@ body {
     0 0 12px rgba(0, 95, 204, 0.25);
 }
 
+.link-decoration  {
+  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
+    0 0 12px rgba(0, 95, 204, 0.25);
+}
+
 header {
   padding: 15px;
   background-color: rgba(211, 211, 211, 0.555);
