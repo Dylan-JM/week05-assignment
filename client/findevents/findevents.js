@@ -31,12 +31,6 @@ function renderEvents(data, container) {
 
     // add location to filter list and account for duplicates
     if (!addedLocations.includes(data[i].location.toLowerCase())) {
-      const newOption = document.createElement("option");
-      newOption.value = data[i].location;
-      const str = data[i].location;
-      const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase(); //make sure first letter is capatalised and rest lowercase.
-      newOption.textContent = modStr;
-      locationSelect.appendChild(newOption);
       addedLocations.push(data[i].location.toLowerCase());
     }
 
@@ -65,6 +59,16 @@ function renderEvents(data, container) {
     link.appendChild(insertedEvent);
     container.appendChild(link);
   }
+
+  // Sort and add locations to dropdown alphabetically
+  addedLocations.sort().forEach((location) => {
+    const newOption = document.createElement("option");
+    newOption.value = location;
+    const str = location;
+    const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
+    newOption.textContent = modStr;
+    locationSelect.appendChild(newOption);
+  });
 }
 
 async function fetchEvents() {
