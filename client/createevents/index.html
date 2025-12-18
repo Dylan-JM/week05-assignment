@@ -4,28 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./createevents.css" />
-    <script src="createevents.js" defer></script>
+    <script type="module" src="createevents.js" defer></script>
     <title>Create Events</title>
   </head>
   <body>
     <!-----------------------------------------Header Area--------------------------------------------------------->
 
-    
     <header>
-       <a
-          id="homepage-id"
-          href="/"
-          class="clickable-header"
-          aria-current="page"
-          ><img id="homepage-logo-img" src="../public/images/websiteLogo.png" alt="The Town Hall logo"
-        /></a>
+      <a id="homepage-id" href="/" class="clickable-header" aria-current="page"
+        ><img
+          id="homepage-logo-img"
+          src="../public/images/websiteLogo.png"
+          alt="The Town Hall logo"
+      /></a>
 
       <div id="nav-container">
-      <nav aria-label="main-navigation">
-        <a href="/findevents/" class="link-decoration">Find Events</a>
-        <a href="/createevents/" class="link-decoration">Create Event</a>
-        <a href="#main-content" class="skip-link">Skip to main content</a>   
-      </nav>
+        <nav aria-label="main-navigation">
+          <a href="/findevents/" class="link-decoration">Find Events</a>
+          <a href="/createevents/" class="link-decoration">Create Event</a>
+          <a href="#main-content" class="skip-link">Skip to main content</a>
+        </nav>
       </div>
     </header>
     <main id="main-content">
@@ -71,43 +69,45 @@
 
               <label id="event-form-date" for="event-form-date"></label>
               <input
-              type = "date"
+                type="date"
                 id="event-form-date"
                 placeholder="Event Date"
                 name="event-form-date"
-              ></input>
+              />
 
               <label id="event-form-time" for="event-form-time"></label>
               <input
-              type="time"
-              min="00:00"
-              max="23:59"
+                type="time"
+                min="00:00"
+                max="23:59"
                 id="event-form-time-start"
                 placeholder="Event time"
                 name="event-form-time-start"
-              ><span>to</span></input>
+              />
+              <span>to</span>
 
               <label id="event-form-time" for="event-form-time"></label>
               <input
-              type="time"
-              min="00:00"
-              max="23:59"
+                type="time"
+                min="00:00"
+                max="23:59"
                 id="event-form-time-end"
                 placeholder="Event time"
                 name="event-form-time-end"
-              ></input>
+              />
 
-              <label for="event-form-category" class="category-label">Event Category</label>
+              <label for="event-form-category" class="category-label"
+                >Event Category</label
+              >
               <select id="event-form-category" name="event-form-category">
                 <option value="">Select a category</option>
+                <option value="Arts and crafts">Arts & Crafts</option>
                 <option value="Convention">Convention</option>
-                <option value="Arts and crafts">Arts and crafts</option>
-                <option value="Theatre/Entertainment">
-                  Entertainment
-                </option>
+                <option value="Theatre/Entertainment">Entertainment</option>
                 <option value="Fete/Funfair">Funfair</option>
                 <option value="Sports">Sports</option>
                 <option value="Social Group">Social Group</option>
+                <option value="Other">Other</option>
               </select>
 
               <button id="submit-btn" type="submit">Submit</button>
@@ -121,6 +121,9 @@
 
     <footer>
       <p id="footer">Courtesy of Adam Booth, Arron Burgess, Paola Campos and Dylan Marley</p>
+      <p>
+        Courtesy of Adam Booth, Arron Burgess, Paola Campos and Dylan Marley
+      </p>
     </footer>
   </body>
 </html>
