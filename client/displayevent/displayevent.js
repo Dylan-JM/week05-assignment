@@ -112,11 +112,17 @@ async function fetchComments(eventId) {
   data.comments.forEach((event) => {
     const listItem = document.createElement("li");
 
+    const commentName = document.createElement("span");
+    commentName.id = "comment-name";
+    commentName.textContent = `Name : ${event.name}`;
+
     const commentText = document.createElement("span");
-    commentText.textContent = `${event.name} ${event.comment}`;
+    commentText.id = "comment-text";
+    commentText.textContent = `Comment : ${event.comment}`;
 
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("comment-container");
+    commentContainer.appendChild(commentName);
     commentContainer.appendChild(commentText);
     listItem.appendChild(commentContainer);
     list.appendChild(listItem);
