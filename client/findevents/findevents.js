@@ -59,16 +59,6 @@ function renderEvents(data, container) {
     link.appendChild(insertedEvent);
     container.appendChild(link);
   }
-
-  // Sort and add locations to dropdown alphabetically
-  addedLocations.sort().forEach((location) => {
-    const newOption = document.createElement("option");
-    newOption.value = location;
-    const str = location;
-    const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
-    newOption.textContent = modStr;
-    locationSelect.appendChild(newOption);
-  });
 }
 
 async function fetchEvents() {
@@ -86,6 +76,17 @@ async function fetchEvents() {
 
   const eventsContainer = document.getElementById("events-container");
   renderEvents(data, eventsContainer);
+
+  // Sort and add locations to dropdown alphabetically (only on initial load)
+  const locationSelect = document.getElementById("filter-select-location");
+  addedLocations.sort().forEach((location) => {
+    const newOption = document.createElement("option");
+    newOption.value = location;
+    const str = location;
+    const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
+    newOption.textContent = modStr;
+    locationSelect.appendChild(newOption);
+  });
 }
 fetchEvents();
 
