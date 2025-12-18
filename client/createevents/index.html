@@ -10,19 +10,21 @@
   <body>
     <!-----------------------------------------Header Area--------------------------------------------------------->
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-      <a id="homepage-id" href="/" class="clickable-header">
-        <h1>Create Events</h1>
-      </a>
-      <nav>
+      <h1>
+        <a id="homepage-id" href="/" class="clickable-header" aria-current="page">Create Events</a>
+      </h1>
+     
+      <nav aria-label="main-navigation">
         <a href="/findevents/">Find Events</a>
-        <a href="/createevents/">Create Event</a>
+        <a href="/createevents/">Create Event</a>     
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <div id="main-form-container">
         <div id="form-container">
-          <h2>Create An Event</h2>
+          <h2>Create an Event</h2>
           <div id="input-container">
             <form id="create-event-form">
               <label id="event-form-name" for="event-form-name"></label>
@@ -76,7 +78,7 @@
                 id="event-form-time-start"
                 placeholder="Event time"
                 name="event-form-time-start"
-              >to</input>
+              ><span>to</span></input>
 
               <label id="event-form-time" for="event-form-time"></label>
               <input
@@ -88,15 +90,15 @@
                 name="event-form-time-end"
               ></input>
 
-              <label for="event-form-category">Event Category</label>
+              <label for="event-form-category" class="category-label">Event Category</label>
               <select id="event-form-category" name="event-form-category">
                 <option value="">Select a category</option>
                 <option value="Convention">Convention</option>
                 <option value="Arts and crafts">Arts and crafts</option>
                 <option value="Theatre/Entertainment">
-                  Theatre/Entertainment
+                  Entertainment
                 </option>
-                <option value="Fete/Funfair">Fete/Funfair</option>
+                <option value="Fete/Funfair">Funfair</option>
                 <option value="Sports">Sports</option>
                 <option value="Social Group">Social Group</option>
               </select>

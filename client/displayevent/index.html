@@ -10,27 +10,29 @@
   <body>
     <!-----------------------------------------Header Area--------------------------------------------------------->
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-      <a id="homepage-id" href="/" class="clickable-header">
-        <h1>Display Event Page</h1>
-      </a>
-      <nav>
+     <h1>
+      <a id="homepage-id" href="/" class="clickable-header" aria-current="page">Display Event Page</a>
+     </h1>
+      
+      <nav aria-label="main-navigation">
         <a href="/findevents/">Find Events</a>
         <a href="/createevents/">Create Event</a>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <div id="event-details-container">
         <h1>Add event details here from js</h1>
       </div>
     </main>
 
     <form id="commentForm">
-      <label for="name">Name:</label>
+      <label for="name" class="comment">Name:</label>
       <input type="text" id="name" name="name" required />
-      <label for="comment">Comment:</label>
-      <input id="comment" name="comment" required />
-      <button type="submit">Send</button>
+      <label for="comment" class="comment">Comment:</label>
+      <textarea id="comment" name="comment" rows="15" required></textarea>
+      <button type="submit" id="submit-button">Send</button>
     </form>
     <section id="comment-section">
       <list id="comment-list"> </list>

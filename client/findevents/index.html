@@ -10,21 +10,23 @@
   <body>
     <!-----------------------------------------Header Area--------------------------------------------------------->
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-      <a id="homepage-id" href="/" class="clickable-header">
-        <h1>Find Events</h1>
-      </a>
-      <nav>
+      <h1>
+        <a id="homepage-id" href="/" class="clickable-header" aria-current="page">Find Events</a>
+      </h1>
+     
+      <nav aria-label="main-navigation">
         <a href="/findevents/">Find Events</a>
         <a href="/createevents/">Create Event</a>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <!-----------------------------------------Filter Area--------------------------------------------------------->
 
       <div id="filter-container">
         <h2>Filters</h2>
-        <select id="filter-select">
+        <select id="filter-select" aria-label="Category">
           <option value="">Category</option>
           <option value="Convention">Convention</option>
           <option value="Arts and crafts">Arts and crafts</option>
@@ -34,7 +36,7 @@
           <option value="Social Group">Social Group</option>
           <option value="Other">Other</option>
         </select>
-        <select id="filter-select-location">
+        <select id="filter-select-location" aria-label="Town/City">
           <option value="">Town/City</option>
         </select>
       </div>
@@ -42,7 +44,7 @@
       <!-- Events Area-->
 
       <div id="main-events-container">
-        <h2>Events</h2>
+        <h2 id="events-title">Events</h2>
         <div id="events-container"></div>
       </div>
 
