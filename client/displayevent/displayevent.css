@@ -21,6 +21,10 @@ body {
   flex-direction: column;
 }
 
+#homepage-logo-img {
+  max-width: 150px;
+}
+
 .skip-link {
   color: whitesmoke;
   text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
@@ -234,6 +238,27 @@ button {
   justify-content: center;
   border-radius: 5px;
   background-color: rgba(170, 170, 170, 0.493);
+}
+
+.comment-container {
+  background-color: rgba(0, 0, 0, 0.116);
+  padding: 15px;
+  margin: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-name {
+  padding: 2px;
+  color: white;
+  font-size: 18px;
+}
+
+#comment-text {
+  padding: 2px;
+  color: white;
+  font-size: 16px;
 }
 
 @media (max-width: 750px) {

@@ -7,12 +7,19 @@
 html,
 body {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
   background-color: black;
   background-image: url("../public/images/Background3.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 .skip-link {
@@ -21,7 +28,7 @@ body {
     0 0 12px rgba(0, 95, 204, 0.25);
 }
 
-.link-decoration  {
+.link-decoration {
   text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
     0 0 12px rgba(0, 95, 204, 0.25);
 }
@@ -59,10 +66,9 @@ a:hover {
   background-color: rgb(158, 158, 158);
 }
 
-.clickable-header   {
-  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 
-               0 0 8px rgba(0, 95, 204, 0.4),
-               0 0 12px rgba(0, 95, 204, 0.25);
+.clickable-header {
+  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
+    0 0 12px rgba(0, 95, 204, 0.25);
 }
 
 main {
@@ -70,6 +76,10 @@ main {
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 0.1fr 1fr;
   flex: 1;
+}
+
+#homepage-logo-img {
+  max-width: 150px;
 }
 
 #filter-container {
