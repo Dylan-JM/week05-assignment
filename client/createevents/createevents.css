@@ -243,3 +243,9 @@ footer {
 :focus-visible {
   outline: 3px solid rgba(0, 95, 204, 1);
 }
+
+#footer { 
+   color: rgba(59, 36, 20, 1); 
+   text-shadow: 0 0 4px rgba(196, 122, 44, 0.6), 0 0 8px rgba(196, 122, 44, 0.4),
+    0 0 12px rgba(196, 122, 44, 0.25);
+}
