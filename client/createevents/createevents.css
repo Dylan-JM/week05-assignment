@@ -21,6 +21,10 @@ body {
   flex-direction: column;
 }
 
+.skip-link  {
+  color: whitesmoke;
+}
+
 header {
   padding: 15px;
   background-color: rgba(211, 211, 211, 0.555);
@@ -53,6 +57,16 @@ a:hover {
 main {
   display: grid;
   flex: 1;
+}
+
+h2{
+  font-size: 2rem;
+  color: rgba(230, 240, 255, 1);
+  padding: 2rem 0 1rem;
+  text-shadow:
+    0 0 4px rgba(0, 95, 204, 0.6),
+    0 0 8px rgba(0, 95, 204, 0.4),
+    0 0 12px rgba(0, 95, 204, 0.25);
 }
 
 #main-form-container {
@@ -100,13 +114,28 @@ main {
 
 #event-form-date {
   padding: 5px;
+  margin: 0.1rem;
+}
+
+#event-form-time  {
+  margin: 0.4rem  0 0.1rem;
+}
+
+span  {
+  color: white;
+}
+
+
+.category-label {
+  padding: 2rem 0 0.5rem;
+  color: white;
 }
 
 #submit-btn {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
-  margin: 5px;
+  margin: 2rem 0 1rem;
   transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
@@ -176,4 +205,8 @@ footer {
     display: flex;
     flex-direction: column;
   }
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0, 95, 204, 1);
 }
