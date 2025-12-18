@@ -68,12 +68,15 @@ function renderEvents(data, container) {
 }
 
 async function fetchEvents() {
-  const response = await fetch("http://localhost:8080/events", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://event-planner-server-9pnz.onrender.com/events",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   const data = await response.json();
   console.log(data);
 
@@ -91,7 +94,7 @@ categorySelect.addEventListener("change", async (event) => {
   const category = event.target.value;
   const location = locationSelect.value;
   const response = await fetch(
-    `http://localhost:8080/events?category=${category}&location=${location}`
+    `https://event-planner-server-9pnz.onrender.com/events?category=${category}&location=${location}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
@@ -101,7 +104,7 @@ locationSelect.addEventListener("change", async (event) => {
   const location = event.target.value;
   const category = categorySelect.value;
   const response = await fetch(
-    `http://localhost:8080/events?location=${location}&category=${category}`
+    `https://event-planner-server-9pnz.onrender.com/events?location=${location}&category=${category}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
