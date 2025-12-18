@@ -92,7 +92,7 @@ app.get("/events/comments", async function (req, res) {
 app.post("/events/comments", async function (req, res) {
   const { selectedEventId, name, comment } = req.body;
 
-  const query = db.query(
+  const query = await db.query(
     `INSERT INTO comments (event_id, name, comment) VALUES ($1, $2, $3) RETURNING *`,
     [selectedEventId, name, comment]
   );
