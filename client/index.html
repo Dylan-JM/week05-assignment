@@ -10,86 +10,131 @@
   <body>
     <!-----------------------------------------Header Area--------------------------------------------------------->
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <h1>
-        <a id="homepage-id" href="/" class="clickable-header" aria-current="page">Home Page</a>
+        <a
+          id="homepage-id"
+          href="/"
+          class="clickable-header"
+          aria-current="page"
+          >Home Page</a
+        >
       </h1>
-      
-      <nav aria-label="Main-navigation">
-        <a href="/findevents/">Find Events</a>
-        <a href="/createevents/">Create Event</a>
-      </nav>
+      <div id="nav-container">
+        <nav aria-label="Main-navigation">
+          <a href="/findevents/">Find Events</a>
+          <a href="/createevents/">Create Event</a>
+          <a href="#main-content" class="skip-link">Skip to main content</a>
+        </nav>
+      </div>
     </header>
     <main id="main-content">
       <!-----------------------------------------Filter Area--------------------------------------------------------->
 
       <div id="about-us-container">
         <h2>The Town Hall</h2>
-        <p>
-          The Town Hall is a way to keep track and
-          schedule events that are upcomming in your local community. Events
-          range from theatrical performances to social groups to conventions
-          (and everything imbetween). You can find public hosted events on our
-          main page below, and have the tools to organize your own!
-        </p>
-        <p>
-          Why an online app? In the modern day, social isolation has proven to
-          be a significant problem and more and more individuals are opting to
-          be more online than ever before - this is both a pro and a con.
-          Psychologists have proven for decades that human beings are social
-          creatures, and our wellbeing craves social connection and
-          interpersonal relationships. Being more and more online can limit
-          people's wellbeing especially when it becomes a bigger dependant
-          factor. So, why not have an app to help residents of your local
-          community find a reason to get together and get that necessary social
-          connection? That is the heart of community after all, and a village
-          without its occupants is a derelict ruin. So, feel free to scroll
-          what's happening in your local community, make friends, stay in touch
-          and keep people connected!
-        </p>
-        <p>Happy grouping!</p>
+        <div id="homepage-list-container1">
+          <ul id="homepage-list1">
+            <li>
+              The Town Hall helps residents track and schedule upcoming events
+              within their local community.
+            </li>
+            <li>
+              Events span a wide range of interests, including theatrical
+              performances, social groups, conventions, and more.
+            </li>
+            <li>
+              Users can browse publicly hosted events on the main page and
+              access tools to organize their own events.
+            </li>
+          </ul>
+          <img id="event-img1" src="./public/images/eventImg.jpg" />
+        </div>
+        <div id="homepage-list-container2">
+          <img id="event-img2" src="./public/images/tableImg.jpg" />
+          <ul id="homepage-list2">
+            <li>
+              The app addresses growing social isolation caused by increased
+              reliance on online interactions.
+            </li>
+            <li>
+              Research consistently shows that social connection and
+              interpersonal relationships are essential to human wellbeing.
+            </li>
+            <li>
+              By encouraging local gatherings, the platform helps people
+              connect, build friendships, and strengthen their community.
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="carousel">
-        <div class="group">
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
+      <div id="popular-events-container">
+        <h1 id="popular-events-title">Popular Events</h1>
+        <div class="carousel">
+          <div class="group">
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
           </div>
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
-          </div>
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
-          </div>
-        </div>
-        <div  class="group" aria-hidden>
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
-          </div>
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
-          </div>
-          <div class="card">
-            <a id="slider-a-tag" href="">
-              <img id="card-img" src="./public/images/Noticeboard2.png" alt=""/>
-              <p id="slider-event-name">Event Name</p>
-            </a>
+          <div class="group" aria-hidden>
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
+            <div class="card">
+              <a id="slider-a-tag" href="">
+                <img
+                  id="card-img"
+                  src="./public/images/Noticeboard2.png"
+                  alt=""
+                />
+                <p id="slider-event-name">Event Name</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>

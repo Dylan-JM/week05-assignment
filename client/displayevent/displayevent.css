@@ -21,8 +21,10 @@ body {
   flex-direction: column;
 }
 
-.skip-link  {
+.skip-link {
   color: whitesmoke;
+  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
+    0 0 12px rgba(0, 95, 204, 0.25);
 }
 
 header {
@@ -66,7 +68,7 @@ main {
   text-align: center;
 }
 
-.comment  {
+.comment {
   padding: 1rem 0 0.4rem;
 }
 
@@ -137,7 +139,7 @@ button {
   padding: 1rem;
   font-weight: bold;
   font-size: 1rem;
- }
+}
 
 .event-name {
   padding: 10px;
@@ -234,9 +236,23 @@ button {
   background-color: rgba(170, 170, 170, 0.493);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   button {
     width: 20%;
+  }
+  #nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -247,10 +263,6 @@ button {
   }
   button {
     width: 30%;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
   }
   #name {
     width: 90%;

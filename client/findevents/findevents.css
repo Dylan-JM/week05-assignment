@@ -15,9 +15,10 @@ body {
   background-size: cover;
 }
 
-.skip-link  {
+.skip-link {
   color: whitesmoke;
-  margin-bottom: 3rem;
+  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
+    0 0 12px rgba(0, 95, 204, 0.25);
 }
 
 header {
@@ -31,7 +32,6 @@ header {
 #homepage-id {
   text-decoration: none;
   border: none;
-  
 }
 
 .event-link {
@@ -68,12 +68,14 @@ main {
   margin: 20px;
   background-color: rgba(211, 211, 211, 0.555);
   border-radius: 20px;
-  height: 15%;
+  min-height: 30%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  align-self: start;
+  color: white;
 }
 
 select {
@@ -100,12 +102,10 @@ option {
   margin: 20px;
 }
 
-#events-title  {
+#events-title {
   font-size: 2.5rem;
   color: rgba(230, 240, 255, 1);
-  text-shadow:
-    0 0 4px rgba(0, 95, 204, 0.6),
-    0 0 8px rgba(0, 95, 204, 0.4),
+  text-shadow: 0 0 4px rgba(0, 95, 204, 0.6), 0 0 8px rgba(0, 95, 204, 0.4),
     0 0 12px rgba(0, 95, 204, 0.25);
 }
 
@@ -305,14 +305,15 @@ footer {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr;
+    grid-template-rows: 0.4fr 0.1fr 1fr;
     justify-content: center;
     align-items: center;
   }
 
   #filter-container {
     background-color: transparent;
-    grid-row-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     grid-column-start: 1;
     height: 100%;
   }
@@ -347,17 +348,42 @@ footer {
   h1 {
     margin: 20px;
   }
+  #nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .inserted-event {
     display: flex;
     flex-direction: column;
+  }
+  #filter-container {
+    background-color: transparent;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    height: 100%;
   }
   #about-us-container {
     margin-top: 40px;
     max-height: 100px;
     overflow-y: auto;
+  }
+  main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.35fr 0.1fr 1fr;
+    justify-content: center;
+    align-items: center;
   }
 }
 
