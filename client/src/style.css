@@ -155,7 +155,7 @@ p {
   border-radius: 0.2em;
   text-align: center;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: white;
   background-color: rgba(211, 211, 211, 0.555);
   margin: 5px;
@@ -164,6 +164,7 @@ p {
 #card-img {
   max-height: 250px;
   max-width: 250px;
+  object-fit: contain;
 }
 
 #slider-a-tag {
@@ -172,7 +173,7 @@ p {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
