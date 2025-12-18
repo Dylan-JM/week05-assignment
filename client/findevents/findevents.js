@@ -31,6 +31,12 @@ function renderEvents(data, container) {
 
     // add location to filter list and account for duplicates
     if (!addedLocations.includes(data[i].location.toLowerCase())) {
+      const newOption = document.createElement("option");
+      newOption.value = data[i].location;
+      const str = data[i].location;
+      const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase(); //make sure first letter is capatalised and rest lowercase.
+      newOption.textContent = modStr;
+      locationSelect.appendChild(newOption);
       addedLocations.push(data[i].location.toLowerCase());
     }
 
@@ -62,31 +68,17 @@ function renderEvents(data, container) {
 }
 
 async function fetchEvents() {
-  const response = await fetch(
-    "https://event-planner-server-9pnz.onrender.com/events",
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const response = await fetch("http://localhost:8080/events", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   const data = await response.json();
   console.log(data);
 
   const eventsContainer = document.getElementById("events-container");
   renderEvents(data, eventsContainer);
-
-  // Sort and add locations to dropdown alphabetically (only on initial load)
-  const locationSelect = document.getElementById("filter-select-location");
-  addedLocations.sort().forEach((location) => {
-    const newOption = document.createElement("option");
-    newOption.value = location;
-    const str = location;
-    const modStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
-    newOption.textContent = modStr;
-    locationSelect.appendChild(newOption);
-  });
 }
 fetchEvents();
 
@@ -99,7 +91,7 @@ categorySelect.addEventListener("change", async (event) => {
   const category = event.target.value;
   const location = locationSelect.value;
   const response = await fetch(
-    `https://event-planner-server-9pnz.onrender.com/events?category=${category}&location=${location}`
+    `http://localhost:8080/events?category=${category}&location=${location}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
@@ -109,7 +101,7 @@ locationSelect.addEventListener("change", async (event) => {
   const location = event.target.value;
   const category = categorySelect.value;
   const response = await fetch(
-    `https://event-planner-server-9pnz.onrender.com/events?location=${location}&category=${category}`
+    `http://localhost:8080/events?location=${location}&category=${category}`
   );
   const data = await response.json();
   renderEvents(data, resultsList);
