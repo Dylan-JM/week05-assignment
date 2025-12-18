@@ -8,7 +8,7 @@ https://event-planner-server-9pnz.onrender.com
 1. Create database with two tables. 'events' and 'comments'
 2. 'events' table should have 'host_name TEXT' 'event_name TEXT' 'category TEXT' 'date DATE' 'time TEXT' 'event_description TEXT' 'location TEXT'
 3. 'comments' table should have 'event_id' 'name' 'comment'.
-4. Create .env with environment variable DATABASE_URL=[yourURL]
+4. Create .env file in the server with environment variable DATABASE_URL=[yourURL]
 5. In server folder, run npm i
 6. In client folder, run npm install; npm run build
 7. In client and server, use npm run dev.
