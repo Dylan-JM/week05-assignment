@@ -25,7 +25,6 @@ body {
   max-width: 150px;
 }
 
-
 header {
   padding: 15px;
   background-color: rgba(211, 211, 211, 0.555);
@@ -35,6 +34,7 @@ header {
 }
 
 a {
+  color: black;
   padding: 10px;
   text-decoration: none;
   font-weight: bold;
@@ -49,14 +49,11 @@ a:hover {
   padding: 12px;
 }
 
-
 .link-decoration,
 .skip-link {
-  text-shadow:
-      0 0 4px rgba(196, 122, 44, 0.6),
-      0 0 8px rgba(196, 122, 44, 0.4),
-      0 0 12px rgba(196, 122, 44, 0.25);
-  }
+  text-shadow: 0 0 4px rgba(196, 122, 44, 0.6), 0 0 8px rgba(196, 122, 44, 0.4),
+    0 0 12px rgba(196, 122, 44, 0.25);
+}
 
 main {
   display: flex;
@@ -128,6 +125,10 @@ input {
 #comment {
   width: 40%;
   padding: 20px;
+}
+
+#submit-button {
+  cursor: pointer;
 }
 
 #comment-section {
