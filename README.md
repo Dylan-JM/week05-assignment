@@ -27,4 +27,5 @@ https://event-planner-server-9pnz.onrender.com
 4. We used trello to designate tasks.
 
 <img width="1838" height="731" alt="image" src="https://github.com/user-attachments/assets/b15146e0-691a-497f-acec-17e8ea23f3b6" />
-<img width="1849" height="733" alt="image" src="https://github.com/user-attachments/assets/10234a36-876a-4561-a127-33f13e79f3f0" />
+<img width="2558" height="1268" alt="image" src="https://github.com/user-attachments/assets/0bd1be60-bcaf-46b5-8721-e0c7527f56dd" />
+
