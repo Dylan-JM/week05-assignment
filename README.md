@@ -1,4 +1,4 @@
-# week05-assignment
+# Week 05 Project: Design and Build a Full Stack Application
 
 https://event-planner-12va.onrender.com
 
