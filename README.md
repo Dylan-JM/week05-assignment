@@ -1,5 +1,7 @@
 # Week 05 Project: Design and Build a Full Stack Application
 
+> ⚠️ **Note:** This project uses Supabase on the free tier. The database may be paused or removed at any time.
+
 https://event-planner-12va.onrender.com
 
 https://event-planner-server-9pnz.onrender.com
@@ -28,4 +30,11 @@ https://event-planner-server-9pnz.onrender.com
 
 <img width="1838" height="731" alt="image" src="https://github.com/user-attachments/assets/b15146e0-691a-497f-acec-17e8ea23f3b6" />
 <img width="2558" height="1268" alt="image" src="https://github.com/user-attachments/assets/0bd1be60-bcaf-46b5-8721-e0c7527f56dd" />
+
+# Gallery
+<img width="2560" height="1279" alt="Event-Planner-Main" src="https://github.com/user-attachments/assets/fa7fbdb9-dc32-45e6-b69d-9602327f05e0" />
+
+<img width="2560" height="1279" alt="Event-Planner-Find-Events" src="https://github.com/user-attachments/assets/e6aad4f6-e7da-47e2-b7b0-c4fbb866dd42" />
+
+<img width="2560" height="1279" alt="Event-Planner-Create-Events" src="https://github.com/user-attachments/assets/06be323d-ea26-475c-88d5-afbb0c892421" />
 
